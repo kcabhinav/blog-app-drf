@@ -1,0 +1,9 @@
+from django.urls import path
+from .views import PostView, PostListView, AuthorListView, AuthorView
+urlpatterns = [
+    path('post/', PostListView.as_view(), name = 'post_list_view'),
+    path('post/<int:pk>', PostView.as_view(), name = 'post_view'),
+    path('author/', AuthorListView.as_view(), name = 'author_list_view'),
+    path('author/<int:pk>', AuthorView.as_view(), name = 'author_view'),
+
+]
